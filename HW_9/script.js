@@ -1,5 +1,5 @@
 const addButtonElement = document.getElementById("add-button"); 
-const deleteComment = document.getElementById("remove-comment"); 
+const deleteComment = document.getElementById("remove-comment"); // измеила наименование переменной
 const commentsElement = document.getElementById("comments"); 
 const nameInputElement = document.getElementById("name-input"); 
 const commentInputElement = document.getElementById("comment-input");  
@@ -49,6 +49,7 @@ const delValue = () => {
   commentInputElement.value = "";
 };
 
+// Добавим счетчик лайков
 const addLike =() => {
   const likeButtons = commentsElement.querySelectorAll('.like-button');
   for(let likeButtonElement of likeButtons) {
@@ -145,6 +146,7 @@ addButtonElement.addEventListener("click", () => {
   renderComments();
 });
 
+// дизейбл переделала
 deleteComment.addEventListener("click", () => {
   delComment();
 });
