@@ -1,5 +1,5 @@
 const addButtonElement = document.getElementById("add-button"); 
-const removeComment = document.getElementById("remove-comment"); 
+const deleteComment = document.getElementById("remove-comment"); 
 const commentsElement = document.getElementById("comments"); 
 const nameInputElement = document.getElementById("name-input"); 
 const commentInputElement = document.getElementById("comment-input");  
@@ -81,7 +81,6 @@ const editText = ( ) => {
           else if (comments[index].isEdit === true){
             comments[index].isEdit = false;
           }
-
           renderComments();
       })
   };
@@ -125,7 +124,6 @@ addButtonElement.addEventListener("click", () => {
     commentInputElement.placeholder = 'Введите комментарий';
     nameInputElement.value = '';
     commentInputElement.value = '';
-    buttonBlock();
     return;
   } 
 
@@ -147,24 +145,26 @@ addButtonElement.addEventListener("click", () => {
   renderComments();
 });
 
-removeComment.addEventListener("click", () => {
+deleteComment.addEventListener("click", () => {
   delComment();
 });
 
-const buttonBlock = () => {
-  document.querySelectorAll("#name-input,#comment-input").forEach((el) => {
-    el.addEventListener("input", () => {
-      if (document.getElementById("add-button").disabled = !document.getElementById("name-input").value || !document.getElementById("comment-input").value)
-        document.getElementById("add-button").disabled = true;
-      else
-      document.getElementById("add-button").disabled = false;
-    });
-  });
-};
-
 addFormElement.addEventListener('keyup', (e) => {
-  if (e.code === "Enter") {
+  if (e.code === 'Enter') {
     addButtonElement.click();
     delValue();
+  }
+});
+
+nameInputElement.addEventListener('input', (e) => {
+  addButtonElement.disabled = true;
+  if (e.target.value.length > 0 && commentInputElement.value.length > 0) {
+    addButtonElement.disabled = false;
+  }
+});
+commentInputElement.addEventListener('input', (e) => {
+  addButtonElement.disabled = true;
+  if (e.target.value.length > 0 && nameInputElement.value.length > 0) {
+    addButtonElement.disabled = false;
   }
 });
