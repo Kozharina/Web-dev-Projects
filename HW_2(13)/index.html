@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лента комментариев</title> 
+  <link rel="stylesheet" href="styles.css" /> 
+</head>
+<body>
+  <div class="container">
+    <div id="loaderComments" >Комментарии загружаются...</div> 
+    <ul class="comments" id ="comments"> 
+      <!-- Список рендерится из JS --> 
+   
+    </ul> 
+    <div class="add-form"> 
+      <input 
+        type="text" 
+        class="add-form-name" 
+        placeholder="Введите ваше имя" 
+        id ='name-input' 
+      /> 
+      <textarea 
+        type="textarea" 
+        class="add-form-text" 
+        placeholder="Введите ваш комментарий" 
+        rows="4" 
+        id="comment-input" 
+      ></textarea> 
+      <div class="add-form-row"> 
+        <button  class="add-form-button" id="add-button" >Написать</button> 
+        <button  class="add-form-button"     id="remove-comment" >Удалить</button> 
+      </div> 
+    </div> 
+    <div id="PushCommentsText">Комментарий добавляется...</div>
+  </div> 
+  <script src="script.js"></script> 
+</body> 
+</html>
