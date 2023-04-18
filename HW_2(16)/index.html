@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проект "Комменты"</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main class="main">
+    <ul id="list" class="comments">
+      <!--// Рендеринг в JS \\-->
+    </ul>
+    <section id="loaderComments" class="loader -display-none">
+      <h4 id="loaderText">Комментарии загружаются</h4>
+    </section>
+    <div id="form" class="form -display-none">
+      <textarea type="textarea" id="textarea__comment" class="form__comment" placeholder="Введите ваш комментарий"
+        rows="4"></textarea>
+      <div class="form__button">
+        <button id="button__write" class="form__button-write">Написать</button>
+      </div>
+    </div>
+    <div id="registration" class="registration -display-none">
+    </div>
+  </main>
+
+  <script type="module" src="./script.js"></script>
+</body>
+
+</html>
